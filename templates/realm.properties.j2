@@ -25,6 +25,6 @@
 #
 #@jetty.user.deploy.name@:@jetty.user.deploy.password@,user,deploy
 #@jetty.user.build.name@:@jetty.user.build.password@,user,build
-{% for user in rundeck_encoded_users.results %}
-{{ user.item.name }}:{{ user.stdout }},user,{{ user.item.roles|join(',') }}
+{% for user in rundeck_users %}
+{{ user.name }}:{{ user.password }},user,{{ user.roles|join(',') }}
 {% endfor %}
