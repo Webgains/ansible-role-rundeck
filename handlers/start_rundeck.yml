@@ -1,0 +1,10 @@
+---
+
+- name: Make sure Rundeck is {{rundeckd_state}}
+  service: name=rundeckd state={{rundeckd_state}}
+  tags: rundeck-webgains
+
+- name: Wait for Rundeck to be up and running
+  wait_for:
+    host: localhost
+    port: 4440

@@ -5,7 +5,9 @@
   when: ansible_service_mgr == 'systemd'
 
 - name: start rundeck
-  service: name=rundeckd state=started
+  include_tasks: "{{role_path}}/handlers/start_rundeck.yml"
+  rundeckd_state: started
 
 - name: restart rundeck
-  service: name=rundeckd state=restarted
+  include_tasks: "{{role_path}}/handlers/start_rundeck.yml"
+  rundeckd_state: restarted
