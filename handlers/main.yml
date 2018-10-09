@@ -6,8 +6,10 @@
 
 - name: start rundeck
   include_tasks: "{{role_path}}/handlers/start_rundeck.yml"
-  rundeckd_state: started
+  vars:
+    rundeckd_state: started
 
 - name: restart rundeck
   include_tasks: "{{role_path}}/handlers/start_rundeck.yml"
-  rundeckd_state: restarted
+  vars:
+    rundeckd_state: restarted
