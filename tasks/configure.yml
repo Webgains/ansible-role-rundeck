@@ -58,7 +58,7 @@
 - name: Configure | Ensure server url is configured (framework.properties)
   lineinfile:
     dest: /etc/rundeck/framework.properties
-    regexp: "^framework\.server\.url\s*\=s*"
+    regexp: "^framework\\.server\\.url\\s*=\\s*"
     line: "framework.server.url = {{ rundeck_protocol }}://{{ rundeck_domain }}"
   notify:
     - restart rundeck
